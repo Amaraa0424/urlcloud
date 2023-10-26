@@ -1,6 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
+import "dotenv/config";
+require("dotenv").config();
+
+console.log(`test`, process.env);
 
 const ImageInput: React.FC<{ onImageSubmit: (url: string) => void }> = ({
   onImageSubmit,
@@ -32,16 +36,15 @@ export default ImageInput;
 
 export const uploadToCloudinary = async (imageUrl: string) => {
   try {
-    // Replace with your Cloudinary credentials
-    const cloudName = "dyazf5drt";
-    const apiKey = "644472723997976";
-    const apiSecret = "vUGsmQVVEFXIYoCx0t55MBZbwrs";
+    const cloudName = "dmn841od0";
+    const apiKey = "312467562666144";
+    const apiSecret = "DlC8NBpOX7agbn4u-WYtgBwhLNk";
 
     const response = await axios.post(
       `https://api.cloudinary.com/v1_1/${cloudName}/image/upload`,
       {
         file: imageUrl,
-        upload_preset: "lz2yucbp",
+        upload_preset: "prod_preset",
         api_key: apiKey,
         api_secret: apiSecret,
       }

@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import ImageInput from "../components/ImageInput";
 import { uploadToCloudinary } from "../components/ImageInput";
+import 'dotenv/config'
+require('dotenv').config();
 
 const Home: React.FC = () => {
   const [uploadedImageUrl, setUploadedImageUrl] = useState<string | null>(null);
