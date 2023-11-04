@@ -6,6 +6,14 @@ const nextConfig = {
     APISECRET: "DlC8NBpOX7agbn4u-WYtgBwhLNk",
     PRESET: "prod_preset",
   },
+
+  reactStrictMode: false,
+  webpack5: true,
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false };
+
+    return config;
+  },
 };
 
 module.exports = nextConfig;
